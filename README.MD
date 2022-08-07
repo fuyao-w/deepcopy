@@ -8,7 +8,7 @@
         B int64
         C string
         inter
-	    T time.Time
+        T time.Time
     }
 	
     type inter struct {
@@ -22,8 +22,8 @@
             C: "3",
             inter: inter{
                 loc: "beijing",
-            },
-	        T: time.Now(),
+            }, 
+            T: time.Now(),
         }))
     }
 ```
