@@ -8,6 +8,7 @@
         B int64
         C string
         inter
+        T time.Time
     }
 	
     type inter struct {
@@ -21,13 +22,14 @@
             C: "3",
             inter: inter{
                 loc: "beijing",
-            },
+            }, 
+            T: time.Now(),
         }))
     }
 ```
 输出：
 ```go
-    {1 2 3 {}}
+    {1 2 3 {} 2022-08-07 16:00:10.905688 +0800 CST m=+0.000465228}
 ```
 
 注意：除了 time.Time 外，其他结构体的非导出字段不会复制
