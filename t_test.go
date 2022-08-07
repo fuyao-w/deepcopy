@@ -13,6 +13,7 @@ type S struct {
 	B int64
 	C string
 	inter
+	T time.Time
 }
 
 func TestS(t *testing.T) {
@@ -23,6 +24,7 @@ func TestS(t *testing.T) {
 		inter: inter{
 			loc: "beijing",
 		},
+		T: time.Now(),
 	}))
 }
 
@@ -162,4 +164,13 @@ func (d dp) DeepCopy() interface{} {
 func TestDpInter(t *testing.T) {
 	d := dp{4}
 	t.Log(Copy(d))
+}
+
+type Dao struct {
+	CreatedAt time.Time
+}
+
+func TestTime(t *testing.T) {
+	t.Log(Copy(Dao{time.Now()}).(Dao).CreatedAt.Unix())
+
 }
