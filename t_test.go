@@ -52,6 +52,7 @@ func PtrStr(i string) *string {
 }
 
 func TestName(t *testing.T) {
+
 	k := K{
 		X:      PtrInt(1),
 		Y:      PtrStr("s"),
